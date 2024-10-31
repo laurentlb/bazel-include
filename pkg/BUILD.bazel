@@ -6,7 +6,9 @@ cc_library(
 )
 
 # No need to specify "foo" because there's the include.
-# #include "sub.hh"
+#   #include "sub.hh"
+# also valid:
+#   #include "pkg/foo/sub.hh"
 cc_library(
     name = "dep2",
     hdrs = ["foo/sub.hh"],
@@ -18,6 +20,8 @@ cc_library(
 #   #include "third_party/foo/sub.hh"
 # or
 #   #include "sub.hh"
+# or
+#   #include "pkg/foo/sub.hh"
 cc_library(
     name = "dep3",
     hdrs = ["foo/sub.hh"],
