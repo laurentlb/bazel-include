@@ -1,0 +1,20 @@
+cc_library(
+    name = "dep1",
+    hdrs = ["foo/sub.hh"],
+    visibility = ["//visibility:public"],
+)
+
+cc_library(
+    name = "dep2",
+    hdrs = ["foo/sub.hh"],
+    visibility = ["//visibility:public"],
+    includes = ["foo"],
+)
+
+cc_library(
+    name = "dep3",
+    hdrs = ["foo/sub.hh"],
+    visibility = ["//visibility:public"],
+    include_prefix = "third_party",
+    includes = ["foo"],
+)

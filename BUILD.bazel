@@ -1,0 +1,17 @@
+cc_binary(
+    name = "bin1",
+    srcs = ["main1.cc"],
+    deps = ["//pkg:dep1"],
+)
+
+cc_binary(
+    name = "bin2",
+    srcs = ["main2.cc"],
+    deps = ["//pkg:dep2"],
+)
+
+cc_binary(
+    name = "bin3",
+    srcs = ["main3.cc"],
+    deps = ["//pkg:dep3"],
+)
