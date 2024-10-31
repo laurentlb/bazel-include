@@ -1,9 +1,12 @@
+# #include "pkg/foo/sub.hh"
 cc_library(
     name = "dep1",
     hdrs = ["foo/sub.hh"],
     visibility = ["//visibility:public"],
 )
 
+# No need to specify "foo" because there's the include.
+# #include "sub.hh"
 cc_library(
     name = "dep2",
     hdrs = ["foo/sub.hh"],
@@ -11,6 +14,10 @@ cc_library(
     includes = ["foo"],
 )
 
+# either
+#   #include "third_party/foo/sub.hh"
+# or
+#   #include "sub.hh"
 cc_library(
     name = "dep3",
     hdrs = ["foo/sub.hh"],

@@ -4,12 +4,14 @@ cc_binary(
     deps = ["//pkg:dep1"],
 )
 
+# #include "sub.hh"
 cc_binary(
     name = "bin2",
     srcs = ["main2.cc"],
     deps = ["//pkg:dep2"],
 )
 
+# #include "third_party/foo/sub.hh"
 cc_binary(
     name = "bin3",
     srcs = ["main3.cc"],
